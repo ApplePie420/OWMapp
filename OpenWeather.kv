@@ -1,0 +1,48 @@
+#custom label
+<Info@Label>:
+    font_size: 25
+    font_name: "Montserrat-Regular"
+    bold: True
+
+#set grid for app
+<AppLogic>:
+    id: weatherApp
+    orientation: "horizontal"
+    rows: 4
+    spacing: 5
+    padding: 5
+
+    #first row, location
+    BoxLayout:
+        spacing: 10
+        Info:
+            text: root.placeLbl
+
+    #second row, image
+    BoxLayout:
+        spacing: 10
+        padding: 0
+        size_hint: 1, 2
+        Image:
+            source: root.sourceImg
+            allow_stretch: True
+
+    #third row, temperature
+    BoxLayout:
+        spacing: 10
+        Info:
+            text: root.tempLbl + " C"
+
+    #fourth row, wind speed, status and humidity
+    BoxLayout:
+        spacing: 10
+        Info:
+            text: root.windLbl + "km/h"
+        Info:
+            text: "|"
+        Info:
+            text: root.statLbl
+        Info:
+            text: "|"
+        Info:
+            text: root.humLbl + "%"
